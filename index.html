@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
 
+
     <title>Anthropology Quiz</title>
   </head>
   <body>
@@ -14,13 +15,14 @@
       <li id="headInfoTime">Time: 0</li>
     </header>
 
-    <main>
+    <main class = "card-container">
+
       <section class="titleAndQs">
-        <p id="tAndQ">Anthropology Quiz</p>
+        <p>Anthropology Quiz</p>    
       </section>
 
       <div class="button">
-        <button id="startQuiz">Start Quiz</button>
+        <button id="startQuiz" class = "hide">Start Quiz</button>           <!-- This is where the answer choices will appear-->
       </div>
 
       <!--     <div id = "qOptions">
@@ -32,12 +34,10 @@
       </ol>     
     </div>  -->
     </main>
-
     <footer>
-      <div>
-        <p id = "loseWin">Center</p>
-      </div>
+        <p id = "rightWrong">Center</p><!-- This is where the Right or Wrong text will apear after the user answers -->            
     </footer>
-    <script src="script.js"></script>
   </body>
+
+  <script src="script.js"></script>
 </html>
