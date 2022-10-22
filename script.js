@@ -97,16 +97,57 @@ let Questions = [
 
 {
     title: "How many teeth does an adult have?",
-    answers: ["age", "diet", "bone-density", "attrition"],
-    correct: "age",
+    answers: ["30", "28", "32", "26"],
+    correct: "32",
 },
 
+{
+  title: "Who is considered the father of Anthropology?",
+  answers: ["Franz Boas", "Dimitri Sandoval", "Joffrey Pietry", "Samuel Cane"],
+  correct: "Franz Boas",
+},
 
-{}
+{
+  title: "How many years ago did the Neanderthals die off?",
+  answers: ["40,000", "100,000", "150,000", "200,000"],
+  correct: "40,000",
+},
 
+{
+  title: "What skeletal remains can provide insight to whether the specimen is male or female?",
+  answers: ["Femoral Head", "C-7", "Metacarpals", "Hyoid"],
+  correct: "Femoral Head",
+},
 
+{
+  title: "What is one method of finding a candlestine grave?",
+  answers: ["Hydroflaxing", "Restall Layout", "GeoTerrain", "Subsurface Probing"],
+  correct: "Subsurface Probing",
+},
 
+{
+  title: "In what part of the body is the Occipital bone found?",
+  answers: ["Cranium", "Appendicular", "Vertebral", "Torso"],
+  correct: "Cranium",
+},
 
+{
+  title: "About what age does the clavicle stop growing?",
+  answers: ["32", "25", "18", "14"],
+  correct: "25",
+},
+
+{
+  title: "How many subfields of Anthropology are there?",
+  answers: ["One", "Two", "Three", "Four"],
+  correct: "Four",
+},
+
+{
+  title: "Anthropology is the study of what?",
+  answers: ["Insects", "Disease", "Humans", "History"],
+  correct: "Humans",
+},
 
 ] 
 
