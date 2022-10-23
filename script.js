@@ -58,17 +58,17 @@ function hideStartButton() {              //Function for hiding button and switc
 
 function showQuestions() {                  //Function for how seeing the series of questions
   if (index < Questions.length) {
-    document.getElementById("qOptions.b").innerHTML = `
+    document.getElementById("qOptions").innerHTML = `
       <ol >   
       <p>${Questions[index].title}</p>   
-            <button class = "b"> ${Questions[index].answers[0]} </button>
-            <button class = "b"> ${Questions[index].answers[1]} </button>
-            <button class = "b"> ${Questions[index].answers[2]} </button>
-            <button class = "b"> ${Questions[index].answers[3]} </button>  
+            <button class = "b">${Questions[index].answers[0]}</button>
+            <button class = "b">${Questions[index].answers[1]}</button>
+            <button class = "b">${Questions[index].answers[2]}</button>
+            <button class = "b">${Questions[index].answers[3]}</button>  
         </ol>
         `;
   } else {
-    gameOver();
+    gameOver(); 
   }
 }
 
@@ -80,30 +80,15 @@ document.getElementById("qOptions").onclick = function (e) {    //Function for r
     secondsLeft -= 10;
   }
 
-  if (e.target.innerText === Questions[2].correct) {
-    document.getElementById("check").innerHTML = `<h3>Correct</h3>`;
-  } else {
-    document.getElementById("check").innerHTML = `<h3>Wrong</h3>`;
-    secondsLeft -= 10;
-  }
-
-  if (e.target.innerText === Questions[0].correct) {
-    document.getElementById("check").innerHTML = `<h3>Correct</h3>`;
-  } else {
-    document.getElementById("check").innerHTML = `<h3>Wrong</h3>`;
-    secondsLeft -= 10;
-  }
-
-
   index++;
   showQuestions();
 };
 
 function gameOver() {
-  if (index > Questions.length || secondsLeft <= 0) {
+  if (secondsLeft <= 0) {
     gameDone.style.display = "block";
     qOptions.style.display = "none";
-    timeScore.textContent = "Time: " + secondsLeft;
+    timeScore.textContent = "Your final score is: " + secondsLeft;
   } 
 
   //hide qOptions and check divs , show input block
