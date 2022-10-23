@@ -32,8 +32,8 @@ var score = localStorage.getItem("count");
 var timeScore = document.querySelector("#timeScore");
 var gameDone = document.querySelector('#gameOver');
 var timer = document.querySelector("#headInfoTime");
-var secondsLeft = 200;
-var index = 0;                           // Question index
+var secondsLeft = 76;
+var index = 0;                           // Question # index
 
 function pushedStartQuiz() {             //Buttonclicked function, sets time, and starts game
   setTime();
@@ -45,13 +45,13 @@ function setTime() {                     //Function for timer
     secondsLeft--;
     timer.textContent = "Time: " + secondsLeft;
     if (secondsLeft === 0 || secondsLeft <=0 ) {
-      gameOver()                                   //Added gameOver() and or condition, but now the game won't end after done with series of questions if users time is > 0
+      gameOver()                                   // Added gameOver() for the 
       clearInterval(timerInterval);
     } 
   }, 1000);
 }
 
-function hideStartButton() {              //Function for hiding button and switches to questions
+function hideStartButton() {              // Function for hiding button and switches to questions
   startButton.style.display = "none";
   showQuestions();
 }
@@ -73,7 +73,7 @@ function showQuestions() {                  //Function for how seeing the series
 }
 
 document.getElementById("qOptions").onclick = function (e) {    //Function for right and wrong
-  if (e.target.innerText === Questions[0].correct) {
+  if (e.target.innerText === Questions[index].correct) {
     document.getElementById("check").innerHTML = `<h3>Correct</h3>`;
   } else {
     document.getElementById("check").innerHTML = `<h3>Wrong</h3>`;
