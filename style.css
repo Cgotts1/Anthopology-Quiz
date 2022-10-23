@@ -108,7 +108,9 @@ main {
   h3 {
     display:flex;
     justify-content:center;
-  }
+  } 
 
-  
-  
+  .formSubmit {
+    font-size:16px;
+    padding:5px;
+  }
