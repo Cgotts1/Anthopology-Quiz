@@ -32,7 +32,7 @@ var score = localStorage.getItem("count");
 var timeScore = document.querySelector("#timeScore");
 var gameDone = document.querySelector('#gameOver');
 var timer = document.querySelector("#headInfoTime");
-var secondsLeft = 75;
+var secondsLeft = 200;
 var index = 0;                           // Question index
 
 function pushedStartQuiz() {             //Buttonclicked function, sets time, and starts game
@@ -87,7 +87,7 @@ document.getElementById("qOptions").onclick = function (e) {    //Function for r
 
 
 
-function gameOver() {4444444
+function gameOver() {
   if (secondsLeft <= 0 || index > 0) {                     // index > 0 to end game once questions are done
     gameDone.style.display = "block";
     qOptions.style.display = "none";
