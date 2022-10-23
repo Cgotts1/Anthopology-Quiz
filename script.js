@@ -27,13 +27,12 @@ function display(){
 
 
 
-
 var startButton = document.querySelector("#startQuiz");
 var score = localStorage.getItem("count");
 var timeScore = document.querySelector("#timeScore");
 var gameDone = document.querySelector('#gameOver');
 var timer = document.querySelector("#headInfoTime");
-var secondsLeft = 200;
+var secondsLeft = 75;
 var index = 0;                           // Question index
 
 function pushedStartQuiz() {             //Buttonclicked function, sets time, and starts game
@@ -62,10 +61,10 @@ function showQuestions() {                  //Function for how seeing the series
     document.getElementById("qOptions").innerHTML = `
       <ol >   
       <p>${Questions[index].title}</p>   
-            <button class = "b">${Questions[index].answers[0]}</button>
-            <button class = "b">${Questions[index].answers[1]}</button>
-            <button class = "b">${Questions[index].answers[2]}</button>
-            <button class = "b">${Questions[index].answers[3]}</button>  
+            <button>${Questions[index].answers[0]}</button>
+            <button>${Questions[index].answers[1]}</button>
+            <button>${Questions[index].answers[2]}</button>
+            <button>${Questions[index].answers[3]}</button>  
         </ol>
         `;
   } else {
@@ -85,11 +84,15 @@ document.getElementById("qOptions").onclick = function (e) {    //Function for r
   showQuestions();
 };
 
-function gameOver() {
-  if (secondsLeft <= 0) {
+
+
+
+function gameOver() {4444444
+  if (secondsLeft <= 0 || index > 0) {                     // index > 0 to end game once questions are done
     gameDone.style.display = "block";
     qOptions.style.display = "none";
     timeScore.textContent = "Your final score is: " + secondsLeft;
+   
   } 
 
   //hide qOptions and check divs , show input block
