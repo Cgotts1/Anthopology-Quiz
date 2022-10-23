@@ -33,7 +33,7 @@ var score = localStorage.getItem("count");
 var timeScore = document.querySelector("#timeScore");
 var gameDone = document.querySelector('#gameOver');
 var timer = document.querySelector("#headInfoTime");
-var secondsLeft = 76;
+var secondsLeft = 200;
 var index = 0;                           // Question index
 
 function pushedStartQuiz() {             //Buttonclicked function, sets time, and starts game
@@ -45,7 +45,8 @@ function setTime() {                     //Function for timer
   var timerInterval = setInterval(function () {
     secondsLeft--;
     timer.textContent = "Time: " + secondsLeft;
-    if (secondsLeft === 0) {
+    if (secondsLeft === 0 || secondsLeft <=0 ) {
+      gameOver()                                   //Added gameOver() and or condition, but now the game won't end after done with series of questions if users time is > 0
       clearInterval(timerInterval);
     } 
   }, 1000);
