@@ -58,13 +58,13 @@ function hideStartButton() {              //Function for hiding button and switc
 
 function showQuestions() {                  //Function for how seeing the series of questions
   if (index < Questions.length) {
-    document.getElementById("qOptions").innerHTML = `
+    document.getElementById("qOptions.b").innerHTML = `
       <ol >   
       <p>${Questions[index].title}</p>   
-            <button> ${Questions[index].answers[0]} </button>
-            <button> ${Questions[index].answers[1]} </button>
-            <button> ${Questions[index].answers[2]} </button>
-            <button> ${Questions[index].answers[3]} </button>  
+            <button class = "b"> ${Questions[index].answers[0]} </button>
+            <button class = "b"> ${Questions[index].answers[1]} </button>
+            <button class = "b"> ${Questions[index].answers[2]} </button>
+            <button class = "b"> ${Questions[index].answers[3]} </button>  
         </ol>
         `;
   } else {
@@ -73,6 +73,20 @@ function showQuestions() {                  //Function for how seeing the series
 }
 
 document.getElementById("qOptions").onclick = function (e) {    //Function for right and wrong
+  if (e.target.innerText === Questions[0].correct) {
+    document.getElementById("check").innerHTML = `<h3>Correct</h3>`;
+  } else {
+    document.getElementById("check").innerHTML = `<h3>Wrong</h3>`;
+    secondsLeft -= 10;
+  }
+
+  if (e.target.innerText === Questions[2].correct) {
+    document.getElementById("check").innerHTML = `<h3>Correct</h3>`;
+  } else {
+    document.getElementById("check").innerHTML = `<h3>Wrong</h3>`;
+    secondsLeft -= 10;
+  }
+
   if (e.target.innerText === Questions[0].correct) {
     document.getElementById("check").innerHTML = `<h3>Correct</h3>`;
   } else {
