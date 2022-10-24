@@ -47,6 +47,7 @@ function setTime() {                     //Function for timer
     if (secondsLeft === 0 || secondsLeft <=0 ) {
       gameOver()                                   // Added gameOver() for the 
       clearInterval(timerInterval);
+      
     } 
   }, 1000);
 }
