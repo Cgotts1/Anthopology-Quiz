@@ -44,7 +44,7 @@ function setTime() {                     //Function for timer
   var timerInterval = setInterval(function () {
     secondsLeft--;
     timer.textContent = "Time: " + secondsLeft;
-    if (secondsLeft === 0 || secondsLeft <=0 ) {
+    if (secondsLeft === 0 || secondsLeft <=0 || index === 10) {     // Added index ===10 (length of questions to stop timer)
       gameOver()                                   // Added gameOver() for the 
       clearInterval(timerInterval);
       
@@ -93,7 +93,7 @@ function gameOver() {
     gameDone.style.display = "block";
     qOptions.style.display = "none";
     timeScore.textContent = "Your final score is: " + secondsLeft;
-    clearInterval(timerInterval);
+    clearInterval;
   } 
 
 
