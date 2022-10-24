@@ -93,12 +93,29 @@ function gameOver() {
     gameDone.style.display = "block";
     qOptions.style.display = "none";
     timeScore.textContent = "Your final score is: " + secondsLeft;
-   
+    clearInterval(timerInterval);
   } 
+
+
+  
 
   //hide qOptions and check divs , show input block
   //take score and initials and save in local storage
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Quiz questions
 
