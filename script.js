@@ -1,34 +1,26 @@
-document.querySelector("#startQuiz").addEventListener("click", pushedStartQuiz); 
+document.querySelector("#startQuiz").addEventListener("click", pushedStartQuiz); // Query selectors for different components of the html page
 document.querySelector("#headInfoTime");
 document.querySelector("#timeScore")
 document.querySelector('#gameOver');
+document.querySelector('#headInfoHighscores')
 
-
-
+// Local storage code
 const input = document.querySelector("input"),
+
 h2 = document.querySelector('h2');
-
-h2.innerHTML = localStorage.getItem("value")
-
+h2.innerHTML = localStorage.getItem("value");
 input.addEventListener("keyup", display);
-
-
 localStorage.setItem('keyName', input.value);
 
 function display(){
   localStorage.setItem('value', input.value);
-  h2.innerHTML = localStorage.getItem("value")
+  h2.innerHTML = localStorage.getItem("value") + " " + secondsLeft
 }
 
-
-
-
-
-
-
-
+// Variables for the start button, timer, gameover screen
 var startButton = document.querySelector("#startQuiz");
 var score = localStorage.getItem("count");
+var hiScorePage = document.querySelector('#headInfoHighscores');
 var timeScore = document.querySelector("#timeScore");
 var gameDone = document.querySelector('#gameOver');
 var timer = document.querySelector("#headInfoTime");
@@ -45,14 +37,14 @@ function setTime() {                     //Function for timer
     secondsLeft--;
     timer.textContent = "Time: " + secondsLeft;
     if (secondsLeft === 0 || secondsLeft <=0 || index === 10) {     // Added index ===10 (length of questions to stop timer)
-      gameOver()                                   // Added gameOver() for the 
+      gameOver()                            // Ends the game 
       clearInterval(timerInterval);
       
     } 
   }, 1000);
 }
 
-function hideStartButton() {              // Function for hiding button and switches to questions
+function hideStartButton() {                // Function for hiding button and switches to questions
   startButton.style.display = "none";
   showQuestions();
 }
@@ -85,40 +77,16 @@ document.getElementById("qOptions").onclick = function (e) {    //Function for r
   showQuestions();
 };
 
-
-
-
-function gameOver() {
-  if (secondsLeft <= 0 || index > 0) {                     // index > 0 to end game once questions are done
+function gameOver() {                                      // Game over function
+  if (secondsLeft <= 0 || index > 0) {                     // Index > 0 to end game once questions are done
     gameDone.style.display = "block";
     qOptions.style.display = "none";
     timeScore.textContent = "Your final score is: " + secondsLeft;
     clearInterval;
   } 
-
-
-  
-
-  //hide qOptions and check divs , show input block
-  //take score and initials and save in local storage
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Quiz questions
-
 let Questions = [
   {
     title: "Which is a component of the biological profile?",

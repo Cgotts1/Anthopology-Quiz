@@ -8,33 +8,33 @@
     <title>Anthropology Quiz!</title>
   </head>
   <body>
-    <header class="headinfo">
+    <header class="headinfo">                   <!-- Stores the HiScores and Time -->
       <a href = ./indexHiScore.html><li id="headInfoHighscores"> HiScores</li></a>
       <li id="headInfoTime">Time: 0</li>
     </header>
 
-    <main class = "card-container">
-      <div id="gameOver" class="hide">          <!-- at end of game gameFunction -->
+    <main class = "card-container">             <!-- Main area qhere the quiz content occurs  -->
+      <div id="gameOver" class="hide">          <!-- Shows at the end of the quiz with gameFunction() on JavaScript -->
         <h1>Game Over!</h1> 
         <p id = "timeScore"> Your final score is: SecondLeft</p>
         <span>Enter initials:</span>
-        <input type = "text"></input>            <!-- ProMaker Dev Local Storage-->
-        <button class = "formSubmit">Submit</button>
+        <input type = "text" placeholder = "Press enter once done"></input>        <!-- ProMaker Dev Local Storage-->
+        <!-- <button class = "formSubmit">Submit</button> -->
         <h2></h2>
       </div>
 
-      <section class="titleAndQs">
+      <section class="titleAndQs">              <!-- Stores the title and qeustions  -->
         <p>Anthropology Quiz</p>     
       </section>
 
       <div class="button">
-        <button id="startQuiz" class = "hide">Start Quiz</button>           <!-- This is where the answer choices will appear-->
+        <button id="startQuiz" class = "hide">Start Quiz</button>                      
       </div>
 
-      <div id = "qOptions"></div>
+      <div id = "qOptions"></div>               <!-- Location of answer choices -->
            
     </div>
-    <div id="check"></div>
+    <div id="check"></div>                      <!-- Checks for Correct and Wrong answers-->
     </main>
     
   </body>
