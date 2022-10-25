@@ -4,7 +4,7 @@ This project is titled "Anthropology Quiz!" and is an application users may refe
 
 ## Usage
 
-Link to application: https://cgotts1.github.io/Portfolio-V3/
+Link to application: https://cgotts1.github.io/Anthropology-Quiz/
 ![Anthropology Quiz Screenshot](/images/Anthro1.jpg)
 ![Anthropology Quiz Screenshot](/images/Anthro2.jpg)
 ![Anthropology Quiz Screenshot](/images/Anthro3.jpg)
