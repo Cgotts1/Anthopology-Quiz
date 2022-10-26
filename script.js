@@ -2,19 +2,46 @@ document.querySelector("#startQuiz").addEventListener("click", pushedStartQuiz);
 document.querySelector("#headInfoTime");
 document.querySelector("#timeScore")
 document.querySelector('#gameOver');
-document.querySelector('#headInfoHighscores')
-
+document.querySelector('#headInfoHighscores');
+var userScore = document.querySelector('#secondLeft');
+var text = document.querySelector("input")
 // Local storage code
-const input = document.querySelector("input"),
+const input = document.querySelector(".formSubmit"),
 
 h2 = document.querySelector('h2');
 h2.innerHTML = localStorage.getItem("value");
-input.addEventListener("keyup", display);
-localStorage.setItem('keyName', input.value);
+input.addEventListener("click", display);
+
 
 function display(){
-  localStorage.setItem('value', input.value);
-  h2.innerHTML = localStorage.getItem("value") + " " + secondsLeft
+  h2.innerHTML = "";
+  var players = localStorage.getItem("value");
+  if(!players) {
+    players = "[]";
+  }
+  console.log(players)
+  players = JSON.parse(players)
+  console.log(players);
+
+  for(var i = 0; i<players.length; i++) {
+    var object = players[i];
+    console.log(object);
+    console.log(i);
+    h2.innerHTML += object.name + " " + "<span class = 'secondsLeft'> " + object.score + " </span><br/>";
+  }
+
+  var a = (text.value)
+  var b = (secondsLeft)
+  var player = {
+    name: a,
+    score: b,
+  }
+  
+  //var players = []
+  players.push(player)
+  console.log(players)
+  
+  localStorage.setItem('value', JSON.stringify(players) );
 }
 
 // Variables for the start button, timer, gameover screen
@@ -81,7 +108,7 @@ function gameOver() {                                      // Game over function
   if (secondsLeft <= 0 || index > 0) {                     // Index > 0 to end game once questions are done
     gameDone.style.display = "block";
     qOptions.style.display = "none";
-    timeScore.textContent = "Your final score is: " + secondsLeft;
+    timeScore.innerHTML = "Your final score is: " + "<span id = 'secondsLeft' > " + secondsLeft + " </span>";
     clearInterval;
   } 
 }
