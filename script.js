@@ -5,11 +5,12 @@ document.querySelector('#gameOver');
 document.querySelector('#headInfoHighscores');
 var userScore = document.querySelector('#secondLeft');
 var text = document.querySelector("input")
+
 // Local storage code
 const input = document.querySelector(".formSubmit"),
 
 h2 = document.querySelector('h2');
-h2.innerHTML = localStorage.getItem("value");
+// h2.innerHTML = localStorage.getItem("value");      // Commenting this out fixed the issue with the local storage of objects displaying right when the game over screen pops up
 input.addEventListener("click", display);
 
 
