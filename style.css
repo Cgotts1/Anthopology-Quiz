@@ -114,3 +114,19 @@ main {
     font-size:16px;
     padding:5px;
   }
+
+  .high-score-container{
+    display: flex;
+    justify-content: center;
+    
+  }
+
+
+.go-home{
+   
+    cursor:pointer;
+    border-bottom:solid 1px;
+    border-radius:10px;
+    padding:20px;
+}
+

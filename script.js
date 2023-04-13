@@ -24,12 +24,15 @@ function display(){
   players = JSON.parse(players)
   console.log(players);
 
-  for(var i = 0; i<players.length; i++) {
-    var object = players[i];
-    console.log(object);
-    console.log(i);
-    h2.innerHTML += object.name + " " + "<span class = 'secondsLeft'> " + object.score + " </span><br/>";
-  }
+  // for(var i = 0; i<players.length; i++) {
+  //   var object = players[i];
+  //   console.log(object);
+  //   console.log(i);
+  //   h2.innerHTML += object.name + " " + "<span class = 'secondsLeft'> " + object.score + " </span><br/>";
+  // }
+
+     h2.innerHTML = "Your score has been added!";
+
 
   var a = (text.value)
   var b = (secondsLeft)
